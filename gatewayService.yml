@@ -20,7 +20,24 @@ spring:
         predicates:
           - Path=/noteService/**
         filters:
-          - StripPrefix=2
+          - StripPrefix=1
+      
+      ## Service3
+      - id: teacherService
+        uri: lb://teacherService
+        predicates:
+          - Path=/teacherService/**
+        filters:
+          - StripPrefix=1
+          
+      ## Service4
+      - id: courseService
+        uri: lb://courseService
+        predicates:
+          - Path=/courseService/**
+        filters:
+          - StripPrefix=1
+          
 server:
   port: 8083
 
